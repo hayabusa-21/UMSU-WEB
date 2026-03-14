@@ -1,0 +1,76 @@
+/* --- 01. VARIABLES & RESET --- */
+:root {
+    --biru-tua: #002147;       /* Navy Gelap */
+    --biru-muda: #1e3a8a;
+    --biru-terang: #3b82f6;
+    --biru: #1d4ed8;
+    --kuning-umsu: #fbbf24;    /* Kuning Emas */
+    --abu-gelap: #1e293b;
+    --abu-muda: #64748b;
+    --bg-section: #f8fafc;
+    --putih: #ffffff;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; background: var(--putih); color: var(--abu-gelap); line-height: 1.6; }
+html { scroll-behavior: smooth; }
+
+/* --- 02. NAVBAR --- */
+#navbar { position: sticky; top: 0; z-index: 1000; background: var(--biru-tua); transition: all 0.3s ease; }
+.navbar-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 15px 24px; }
+.navbar-logo { display: flex; align-items: center; gap: 12px; color: var(--putih); }
+.logo-bulat { background: var(--putih); color: var(--biru-tua); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
+.logo-teks { display: flex; flex-direction: column; }
+.logo-nama { font-weight: bold; font-size: 14px; }
+.logo-sub { font-size: 10px; color: var(--kuning-umsu); }
+.navbar-menu { display: flex; gap: 25px; }
+.menu-link { color: var(--putih); text-decoration: none; font-size: 14px; transition: 0.3s; }
+.menu-link:hover { color: var(--kuning-umsu); }
+.tombol-dark { background: transparent; border: 1px solid var(--kuning-umsu); color: var(--kuning-umsu); padding: 6px 16px; border-radius: 20px; cursor: pointer; }
+
+/* --- 03. HERO --- */
+#hero { 
+    height: 85vh; 
+    background: linear-gradient(rgba(0, 33, 71, 0.85), rgba(30, 58, 138, 0.85)), url('hero-umsu.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center; 
+    color: var(--putih); 
+}
+.hero-judul { font-size: 48px; font-weight: 800; margin-bottom: 20px; }
+.hero-sub { max-width: 700px; margin-bottom: 35px; font-size: 18px; }
+.hero-tombol-grup { display: flex; gap: 15px; justify-content: center; }
+.tombol-utama { background: var(--kuning-umsu); color: var(--biru-tua); padding: 14px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; }
+.tombol-outline { border: 2px solid var(--putih); color: var(--putih); padding: 14px 30px; border-radius: 8px; text-decoration: none; }
+
+/* --- 04. STATISTIK --- */
+#statistik { background: var(--biru-tua); padding: 60px 0; color: var(--putih); }
+.statistik-container { display: flex; justify-content: space-around; max-width: 1200px; margin: 0 auto; text-align: center; flex-wrap: wrap; }
+.stat-angka { font-size: 45px; font-weight: bold; color: var(--kuning-umsu); }
+
+/* --- GRID SYSTEM --- */
+.section-wrapper { max-width: 1200px; margin: 0 auto; padding: 80px 24px; }
+.section-header { text-align: center; margin-bottom: 50px; }
+.program-grid, .berita-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.program-kartu, .berita-kartu { background: var(--putih); padding: 30px; border-radius: 12px; box-shadow: var(--shadow); transition: 0.3s; border: 1px solid #eee; }
+.program-kartu:hover { transform: translateY(-10px); box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.program-kartu.unggulan { background: var(--biru-tua); color: var(--putih); }
+
+/* --- 07. SAMBUTAN --- */
+.sambutan-container { display: flex; align-items: center; gap: 50px; background: var(--bg-section); padding: 50px; border-radius: 20px; }
+.foto-rektor { width: 200px; height: 200px; background: #cbd5e1; border-radius: 20px; display: flex; align-items: center; justify-content: center; font-size: 80px; }
+
+/* --- 08. FOOTER --- */
+#footer { background: var(--abu-gelap); color: var(--putih); padding: 70px 0 30px; }
+.footer-container { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 50px; max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.footer-link { display: block; color: #cbd5e1; text-decoration: none; margin-bottom: 12px; }
+.footer-bawah { text-align: center; margin-top: 50px; border-top: 1px solid #334155; padding-top: 30px; font-size: 14px; }
+
+/* DARK MODE */
+body.dark-mode { background: #020617; color: #f1f5f9; }
+body.dark-mode .program-kartu, body.dark-mode .berita-kartu { background: #0f172a; border-color: #1e293b; color: white; }
+body.dark-mode .sambutan-container { background: #0f172a; }
